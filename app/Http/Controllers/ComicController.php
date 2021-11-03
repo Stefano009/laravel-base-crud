@@ -38,9 +38,14 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+        {//    nel mio metodo store posso anche aggiungere una validation ulteriore che impedisce all'utente parte delle azioni che potrebbero risultare dannose per il mio database
         // questo metodo funziona esattamente come il seeder, potrei scrivere la stessa pappardella che ho nel seeder ma usando request risparmio codice e scrivo nel controller cosa mi serve e poi con fill e fillable il gioco è fatto
         $data = $request->all();
+        $request->validate([
+            'title' => 'required|unique:comics|max:50',
+            'description' => 'required|max:20'
+        ]);
+        // questo metodi di validation però mostra i miei errori ad inizio pagina tutti insieme
         $new_comic = new Comic();
         $new_comic->fill($data);
         $new_comic->save();

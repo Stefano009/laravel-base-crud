@@ -33,8 +33,13 @@
                         <input  value="{{ $details['sale_date'] }}" type="date" name="sale_date" class="form-control" id="sale_date" placeholder="Enter your comic book sale date">
                     </div>
                     <div class="form-group">
-                        <label for="type">type </label>
-                        <input  value="{{ $details['form-control'] }}" type="text" name="type" class="form-control" id="type" placeholder="Enter your comic book type">
+                        <label for="type">type</label>
+                        <select name="type" id="type" class="form-control">
+                            <option value="">Select your book type</option>
+                            <option value="comicBook" {{ $details['type'] == 'comicBook' ? 'selected' : NULL }}>Comic Book</option>
+                            <option value="graphicNovel" {{ $details['type'] ==  'graphicNovel' ? 'selected' : NULL }}>Graphic Novel</option>
+                            <option value="virtualAdventure" {{ $details['type'] ==  'virtualAdventure' ? 'selected' : NULL }}>Virtual-adventure</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+{{-- @if ($errors->any())
+	<div class="alert alert-danger">
+		<ul>
+			@foreach ($errors->all() as $error)
+				<li>{{ $error }}</li>
+			@endforeach
+		</ul>
+	</div>  
+@endif --}}
+{{-- metodo per mostrare tutti gli errori ad inizio pagina --}}
+
 @section('content')
     <div class="container">
         <div class="row">
@@ -11,10 +22,16 @@
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text" name="title" class="form-control" id="title" placeholder="Enter name of your comic book">
+                        @error('title')
+                        <div class="alert alert-danger"> {{ $message }} </div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
                         <input type="text" name="description" class="form-control" id="description" placeholder="Enter comic book description">
+                        @error('description')
+                        <div class="alert alert-danger"> {{ $message }} </div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="type">thumb</label>
@@ -33,8 +50,13 @@
                         <input type="date" name="sale_date" class="form-control" id="sale_date" placeholder="Enter your comic book sale date">
                     </div>
                     <div class="form-group">
-                        <label for="type">type </label>
-                        <input type="text" name="type" class="form-control" id="type" placeholder="Enter your comic book type">
+                        <label for="type">type</label>
+                        <select name="type" id="type" class="form-control">
+                            <option value="">Select your book type</option>
+                            <option value="comicBook">Comic Book</option>
+                            <option value="graphicNovel">Graphic Novel</option>
+                            <option value="virtualAdventure">Virtual adventure</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
