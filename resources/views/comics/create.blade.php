@@ -28,7 +28,8 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" name="description" class="form-control" id="description" placeholder="Enter comic book description">
+                        {{-- <input type="text" name="description" class="form-control" id="description" placeholder="Enter comic book description"> --}}
+                        <textarea class="form-control" id="description" name="description" ></textarea>
                         @error('description')
                         <div class="alert alert-danger"> {{ $message }} </div>
                         @enderror

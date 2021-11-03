@@ -14,7 +14,8 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input  value="{{ $details['description'] }}" type="text" name="description" class="form-control" id="description" placeholder="Enter comic book description">
+                        {{-- <input  value="{{ $details['description'] }}" type="text" name="description" class="form-control" id="description" placeholder="Enter comic book description"> --}}
+                        <textarea  class="form-control" id="description" name="description" >{{ $details['description'] }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="type">thumb</label>
