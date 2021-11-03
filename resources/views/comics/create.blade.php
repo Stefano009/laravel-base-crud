@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group">
                         <label for="sale_date">sale date</label>
-                        <input type="text" name="sale_date" class="form-control" id="sale_date" placeholder="Enter your comic book sale date">
+                        <input type="date" name="sale_date" class="form-control" id="sale_date" placeholder="Enter your comic book sale date">
                     </div>
                     <div class="form-group">
                         <label for="type">type </label>
